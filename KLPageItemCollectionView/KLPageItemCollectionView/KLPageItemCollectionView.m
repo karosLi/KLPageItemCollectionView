@@ -214,7 +214,7 @@
     
     BOOL pageEnabled = NO;
     NSInteger totalPage = 0;
-    NSInteger itemCount = [self.collectionView numberOfItemsInSection:0];
+    NSInteger itemCount = totalItemsCount;
     NSInteger itemCountInPage = self.maxRowCountInPage * self.colNumInRow;
     if (self.maxRowCountInPage > 0) {
         totalPage = itemCount % itemCountInPage == 0 ? itemCount / itemCountInPage : itemCount / itemCountInPage + 1;
@@ -233,7 +233,7 @@
     } else {
         self.pageControl.hidden = YES;
         self.pageControl.numberOfPages = 0;
-        self.collectionView.viewContentSize = CGSizeMake(viewWidth, self.sectionInset.top + self.sectionInset.bottom + (itemHeight + self.lineSpacing) * (totalItemsCount % self.colNumInRow == 0 ? totalItemsCount / self.colNumInRow : (NSInteger)(totalItemsCount / self.colNumInRow) + 1) - self.lineSpacing);
+        self.collectionView.viewContentSize = CGSizeMake(viewWidth, self.sectionInset.top + self.sectionInset.bottom + (itemHeight + self.lineSpacing) * (itemCount % self.colNumInRow == 0 ? itemCount / self.colNumInRow : (NSInteger)(itemCount / self.colNumInRow) + 1) - self.lineSpacing);
     }
 }
 
