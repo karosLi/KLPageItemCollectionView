@@ -81,7 +81,7 @@
     NSInteger itemCountInPage = self.maxRowCountInPage * self.colNumInRow;
     if (self.maxRowCountInPage > 0) {
         self.totalPage = itemCount % itemCountInPage == 0 ? itemCount / itemCountInPage : itemCount / itemCountInPage + 1;
-        self.pageEnabled = YES;
+        self.pageEnabled = self.totalPage > 1;
     }
     
     CGFloat viewWidth = self.collectionView.frame.size.width;
@@ -218,7 +218,7 @@
     NSInteger itemCountInPage = self.maxRowCountInPage * self.colNumInRow;
     if (self.maxRowCountInPage > 0) {
         totalPage = itemCount % itemCountInPage == 0 ? itemCount / itemCountInPage : itemCount / itemCountInPage + 1;
-        pageEnabled = YES;
+        pageEnabled = totalPage > 1;
     }
     
     CGFloat viewWidth = CGRectGetWidth(self.bounds);
