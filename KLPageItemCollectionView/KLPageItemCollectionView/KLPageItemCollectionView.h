@@ -30,7 +30,7 @@
 @property (nonatomic, assign) CGFloat lineSpacing; //行间距，默认 15
 @property (nonatomic, assign) CGFloat interitemSpacing; //列边距，默认 0
 @property (nonatomic, assign) NSInteger colNumInRow; //一行的列数，默认 1
-@property (nonatomic, assign) NSInteger maxRowCountInPage; //一页的最大行数，默认有几行显示几行
+@property (nonatomic, assign) NSInteger maxRowCountInPage;  //一页的最大行数；如果大于0，需要按最大行数分页；如果等于0，需要显示所有行数，不分页；默认有几行显示几行
 
 @property (nonatomic, strong, nullable) UIColor *pageIndicatorTintColor; //分页指示器背景色
 @property (nonatomic, strong, nullable) UIColor *currentPageIndicatorTintColor; //分页指示器当前页颜色
