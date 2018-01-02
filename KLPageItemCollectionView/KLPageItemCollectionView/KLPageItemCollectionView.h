@@ -32,8 +32,8 @@
 @property (nonatomic, assign) NSInteger colNumInRow; //一行的列数，默认 1
 @property (nonatomic, assign) NSInteger maxRowCountInPage; //一页的最大行数，默认有几行显示几行
 
-@property(nonatomic, strong) UIColor *pageIndicatorTintColor; //分页指示器背景色
-@property(nonatomic, strong) UIColor *currentPageIndicatorTintColor; //分页指示器当前页颜色
+@property (nonatomic, strong, nullable) UIColor *pageIndicatorTintColor; //分页指示器背景色
+@property (nonatomic, strong, nullable) UIColor *currentPageIndicatorTintColor; //分页指示器当前页颜色
 
 @property (nonatomic, weak, nullable) id<KLPageItemCollectionViewDelegate> delegate;
 
