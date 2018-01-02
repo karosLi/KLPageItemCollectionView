@@ -31,7 +31,7 @@
     self.pageItemView1.colNumInRow = 5;
     self.pageItemView1.itemHeight = 30;
     self.pageItemView1.delegate = self;
-    [self.pageItemView1 refreshViewContentSize:self.data.count];
+    [self.pageItemView1 calculateViewSize:self.data.count];
     self.pageItemView1.frame = CGRectMake(0, 64, self.pageItemView1.viewSize.width, self.pageItemView1.viewSize.height);
     [self.pageItemView1 reloadData:self.data.count];
     
@@ -41,7 +41,7 @@
     self.pageItemView2.itemHeight = 30;
     self.pageItemView2.maxRowCountInPage = 2;
     self.pageItemView2.delegate = self;
-    [self.pageItemView2 refreshViewContentSize:self.data.count];
+    [self.pageItemView2 calculateViewSize:self.data.count];
     self.pageItemView2.frame = CGRectMake(0, CGRectGetMaxY(self.pageItemView1.frame) + 20, self.pageItemView2.viewSize.width, self.pageItemView2.viewSize.height);
     [self.pageItemView2 reloadData:self.data.count];
     
@@ -51,7 +51,7 @@
     self.pageItemView3.itemHeight = 30;
     self.pageItemView3.maxRowCountInPage = 1;
     self.pageItemView3.delegate = self;
-    [self.pageItemView3 refreshViewContentSize:self.data.count];
+    [self.pageItemView3 calculateViewSize:self.data.count];
     self.pageItemView3.frame = CGRectMake(0, CGRectGetMaxY(self.pageItemView2.frame) + 20, self.pageItemView3.viewSize.width, self.pageItemView3.viewSize.height);
     [self.pageItemView3 reloadData:self.data.count];
     

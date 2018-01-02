@@ -37,8 +37,8 @@
 
 @property (nonatomic, weak, nullable) id<KLPageItemCollectionViewDelegate> delegate;
 
-// 计算 view content size
-- (void)refreshViewContentSize:(NSInteger)totalItemsCount;
+// 计算视图大小，一般用于在获取到数据之后，提前计算视图大小
+- (void)calculateViewSize:(NSInteger)totalItemsCount;
 
 // 刷新数据
 - (void)reloadData:(NSInteger)totalItemsCount;

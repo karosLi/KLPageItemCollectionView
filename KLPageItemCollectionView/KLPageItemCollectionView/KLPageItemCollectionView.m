@@ -187,7 +187,7 @@
 
 - (void)layoutSubviews {
     // 确保 contentsize 计算正确
-    [self refreshViewContentSize];
+    [self calculateViewSize];
     
     [super layoutSubviews];
     self.collectionView.frame = self.bounds;
@@ -198,11 +198,11 @@
 - (void)reloadData:(NSInteger)totalItemsCount {
     self.totalItemsCount = totalItemsCount;
     
-    [self refreshViewContentSize];
+    [self calculateViewSize];
     [self.collectionView reloadData];
 }
 
-- (void)refreshViewContentSize:(NSInteger)totalItemsCount {
+- (void)calculateViewSize:(NSInteger)totalItemsCount {
     self.colNumInRow = MAX(1, self.colNumInRow);
     self.maxRowCountInPage = MAX(0, self.maxRowCountInPage);
     self.flowLayout.colNumInRow = self.colNumInRow;
@@ -250,8 +250,8 @@
 }
 
 #pragma mark - private methods
-- (void)refreshViewContentSize {
-    [self refreshViewContentSize:self.totalItemsCount];
+- (void)calculateViewSize {
+    [self calculateViewSize:self.totalItemsCount];
 }
 
 #pragma mark - UICollectionViewDelegate & UICollectionViewDataSource
