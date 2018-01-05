@@ -282,7 +282,7 @@
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
     UICollectionViewCell *cell = [collectionView cellForItemAtIndexPath:indexPath];
     if ([self.delegate respondsToSelector:@selector(pageItemCollectionView:didSelectView:forItemAtIndex:)]) {
-        [self.delegate pageItemCollectionView:self didSelectView:cell.subviews.firstObject forItemAtIndex:indexPath.item];
+        [self.delegate pageItemCollectionView:self didSelectView:cell.contentView.subviews.firstObject forItemAtIndex:indexPath.item];
     }
 }
 
