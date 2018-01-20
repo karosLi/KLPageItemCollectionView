@@ -273,7 +273,7 @@
             [cell.contentView addSubview:view];
         }
         
-        view.frame = cell.contentView.bounds;
+        view.frame = CGRectMake(0, 0, cell.bounds.size.width, cell.bounds.size.height);
     }
     
     return cell;
