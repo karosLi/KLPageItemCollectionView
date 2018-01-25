@@ -162,6 +162,7 @@
 
 @property (nonatomic, assign) NSInteger totalItemsCount; // 总数据个数
 @property (nonatomic, strong) KLPageItemCollectionViewFlowLayout *flowLayout;
+@property (nonatomic, assign, readwrite) BOOL pageEnabled;
 
 @property (nonatomic, strong) UIPageControl *pageControl;
 
@@ -191,7 +192,9 @@
     
     [super layoutSubviews];
     self.collectionView.frame = self.bounds;
-    self.pageControl.frame = CGRectMake(0, CGRectGetHeight(self.bounds) - 6 - 8, CGRectGetWidth(self.bounds), 8);
+    
+    CGFloat bottomSection = self.sectionInset.bottom;
+    self.pageControl.frame = CGRectMake(0, CGRectGetHeight(self.bounds) - bottomSection + (bottomSection - 8) / 2.0, CGRectGetWidth(self.bounds), 8);
 }
 
 #pragma mark - public methods
@@ -235,6 +238,7 @@
         self.pageControl.numberOfPages = 0;
         self.collectionView.viewContentSize = CGSizeMake(viewWidth, self.sectionInset.top + self.sectionInset.bottom + (itemHeight + self.lineSpacing) * (itemCount % self.colNumInRow == 0 ? itemCount / self.colNumInRow : (NSInteger)(itemCount / self.colNumInRow) + 1) - self.lineSpacing);
     }
+    self.pageEnabled = pageEnabled;
 }
 
 - (CGSize)viewSize {
